@@ -1,0 +1,28 @@
+{
+  "name": "base16-spacemacs-redux",
+  "version": "1.0.0",
+  "description": "A colourscheme for Vim and iTerm, based on the Spacemacs theme",
+  "scripts": {
+    "build": "./node_modules/.bin/base16-builder -s ./base16-spacemacs-redux-dark.yaml -t iterm2 -b dark > ./iterm2/base16-spacemacs-redux-dark.itermcolors && ./node_modules/.bin/base16-builder -s ./base16-spacemacs-redux-dark.yaml -t vim -b dark > ./colors/base16-spacemacs-redux-dark.vim",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colepeters/base16-spacemacs-redux.git"
+  },
+  "keywords": [
+    "vim",
+    "colourscheme",
+    "iterm",
+    "spacemacs"
+  ],
+  "author": "Cole Peters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colepeters/base16-spacemacs-redux/issues"
+  },
+  "homepage": "https://github.com/colepeters/base16-spacemacs-redux#readme",
+  "devDependencies": {
+    "base16-builder": "^1.3.0"
+  }
+}
