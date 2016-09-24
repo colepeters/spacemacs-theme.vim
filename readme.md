@@ -23,4 +23,6 @@ Download the repo, and open the `.itermcolors` file from Finder. Ta-da!
 - Clone the repo
 - `npm install`
 - Edit colours in the `base16-spacemacs-redux-dark.yaml` file
-- `npm run build` to build the vim (`/colors`) and iTerm (`/iterm2`) colourschemes
+- `npm run build` to build the vim (`/colors`) colourscheme.
+
+The iTerm theme is not built automatically, so colours need to be adjusted manually or through iTerm’s GUI.

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A colourscheme for Vim and iTerm, based on the Spacemacs theme",
   "scripts": {
-    "build": "./node_modules/.bin/base16-builder -s ./base16-spacemacs-redux-dark.yaml -t iterm2 -b dark > ./iterm2/base16-spacemacs-redux-dark.itermcolors && ./node_modules/.bin/base16-builder -s ./base16-spacemacs-redux-dark.yaml -t vim -b dark > ./colors/base16-spacemacs-redux-dark.vim",
+    "build": "./node_modules/.bin/base16-builder -s ./base16-spacemacs-redux-dark.yaml -t vim -b dark > ./colors/base16-spacemacs-redux-dark.vim",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
