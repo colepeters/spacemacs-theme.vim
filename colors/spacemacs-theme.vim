@@ -156,7 +156,7 @@ endfun
 call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Error",         s:gui00, s:yellow, s:cterm00, s:cterm08, "", "")
+call <sid>hi("Error",         s:yellow, s:gui01, s:cterm00, s:cterm08, "", "")
 call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
 call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
