@@ -1,33 +1,48 @@
-" Base16 Spacemacs Redux (https://github.com/chriskempson/base16)
-" Scheme: Cole Peters
-
-" This enables the coresponding base16-shell script to run so that
-" :colorscheme works in terminals supported by base16-shell scripts
-" User must set this variable in .vimrc
-"   let g:base16_shell_path=base16-builder/output/shell/
-if !has('gui_running')
-  if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-spacemacs-redux.".&background.".sh"
-  endif
-endif
+" Spacemacs-theme.vim
+" Scheme: Cole Peters, based on nashamri/spacemacs-theme
 
 " GUI color definitions
+" ---|-----------------------|--------------
+" ## | ORIGINAL THEME SWATCH | ACTUAL COLOUR 
+" ---|-----------------------|--------------
+" 00 | bg1                   | dark grey
+" 01 | bg2                   | darker grey
+" 02 | act2                  | dark purple
+" 03 | n/a                   | medium cool grey
+" 04 | base                  | light grey
+" 05 | base                  | light grey
+" 06 | cblk-ln               | purple grey
+" 07 | cblk-ln-bg            | dark purple grey
+" 08 | var                   | azure
+" 09 | const                 | medium purple
+" 0A | comment               | teal
+" 0B | str                   | cool green
+" 0C | type                  | coral
+" 0D | func                  | pink
+" 0E | keyword               | blue
+" 0F | act2                  | dark purple
+" ---|-----------------------|--------------
 let s:gui00 = "292b2e"
 let s:gui01 = "212026"
 let s:gui02 = "5d4d7a"
 let s:gui03 = "68727c"
 let s:gui04 = "b2b2b2"
 let s:gui05 = "b2b2b2"
-let s:gui06 = "545557"
-let s:gui07 = "292E34"
-let s:gui08 = "4f97d7"
+let s:gui06 = "827591"
+let s:gui07 = "373040"
+let s:gui08 = "7590db"
 let s:gui09 = "a45bad"
-let s:gui0A = "7590db"
+let s:gui0A = "2aa1ae"
 let s:gui0B = "2d9574"
 let s:gui0C = "ce537a"
 let s:gui0D = "bc6ec5"
 let s:gui0E = "4f97d7"
 let s:gui0F = "5d4d7a"
+
+" Additional gui colours
+let s:yellow = "b1951d"
+let s:green  = "67b11d"
+let s:white  = "ffffff"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -59,7 +74,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-spacemacs-redux"
+let g:colors_name = "spacemacs-theme"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
@@ -141,26 +156,26 @@ endfun
 call <sid>hi("Bold",          "", "", "", "", "bold", "")
 call <sid>hi("Debug",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Directory",     s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Error",         s:gui00, s:gui08, s:cterm00, s:cterm08, "", "")
+call <sid>hi("Error",         s:gui00, s:yellow, s:cterm00, s:cterm08, "", "")
 call <sid>hi("ErrorMsg",      s:gui08, s:gui00, s:cterm08, s:cterm00, "", "")
 call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
 call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
-call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
+call <sid>hi("IncSearch",     s:white, s:gui09, s:cterm01, s:cterm09, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "", "")
+call <sid>hi("Search",        s:gui01, s:green, s:cterm03, s:cterm0A,  "", "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Visual",        "", s:gui02, "", s:cterm02, "", "")
 call <sid>hi("VisualNOS",     s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("WarningMsg",    s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("WildMenu",      s:gui08, s:gui0A, s:cterm08, "", "", "")
+call <sid>hi("WildMenu",      s:white, s:gui0D, s:cterm08, "", "", "")
 call <sid>hi("Title",         s:gui0D, "", s:cterm0D, "", "none", "")
 call <sid>hi("Conceal",       s:gui0D, s:gui00, s:cterm0D, s:cterm00, "", "")
 call <sid>hi("Cursor",        s:gui00, s:gui05, s:cterm00, s:cterm05, "", "")
@@ -184,7 +199,7 @@ call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", ""
 " Standard syntax highlighting
 call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("Character",    s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "", "")
+call <sid>hi("Comment",      s:gui06, "", s:cterm03, "", "", "")
 call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Constant",     s:gui09, "", s:cterm09, "", "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
